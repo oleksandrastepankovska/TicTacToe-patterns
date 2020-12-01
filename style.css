@@ -1,44 +1,55 @@
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .container {
-    display: flex;
-    background: #fff;
-    align-content: center;
-    justify-content: center;
-    flex-direction: column;
-    min-width: 700px;
-    min-height: 500px;
-    border-radius: 5%;
-    margin: auto;
-  }
-  
-  table {
-    border-collapse: collapse;
-    margin: auto;
-  }
-  
-  td {
-    background-color: #666;
-    border: 5px solid white;
-    font-size: 80px;
-    color: #fff;
-    border-radius: 10%;
-  }
-  
-  #player {
-    padding: 1rem;
-  }
-  
-  body {
-    display: flex;
-    background: #eee url('https://source.unsplash.com/1600x900/?nature') no-repeat
-    center center/cover;
-    height: 100vh;
-    width: 100%;
-    overflow: hidden;
-  }
-  
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #cecece;
+}
+
+.fields__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+  margin-bottom: 40px;
+}
+
+.field {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: rgba(255, 255, 255, .2);
+  transition: all .3s ease;
+  box-shadow: 8px 4px 15px rgba(0, 0, 0, .25), -8px -4px 15px rgba(255, 255, 255, 1), 8px 4px 15px rgba(0, 0, 0, .1) inset, -8px -4px 15px rgba(255, 255, 255, .3) inset;
+}
+
+table {
+  border-collapse: collapse;
+  margin: auto;
+}
+
+td {
+  background-color: #666;
+  border: 5px solid white;
+  font-size: 80px;
+  color: #fff;
+  border-radius: 10%;
+}
+
+#player {
+  padding: 1rem;
+}
