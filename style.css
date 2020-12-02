@@ -92,6 +92,10 @@ img:active{
   margin-bottom: 40px;
 }
 
+.field x{
+  background-color: blueviolet;
+}
+
 .field {
   width: 140px;
   height: 140px;

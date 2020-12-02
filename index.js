@@ -1,75 +1,80 @@
-class Player {
-  constructor(name, char, price = 0) {
-    this.name = name;
-    this.char = char;
-    this.createdDate = new Date();
-    this.id = "" + Date.now();
-    this.price = price;
-  }
-  getPrice() {
-    return this.price;
-  }
-}
+// class Player {
+//   constructor(name, char, price = 0) {
+//     this.name = name;
+//     this.char = char;
+//     this.createdDate = new Date();
+//     this.id = "" + Date.now();
+//     this.price = price;
+//   }
+//   getPrice() {
+//     return this.price;
+//   }
+// }
 
-class CharacterPattern extends Player {
-  constructor(character) {
-    super();
-    this.character = character;
-  }
+// class CharacterPattern extends Player {
+//   constructor(character) {
+//     super();
+//     this.character = character;
+//   }
 
-  getPrice() {
-    return this.character.getPrice();
-  }
-}
+//   getPrice() {
+//     return this.character.getPrice();
+//   }
+// }
 
-class HatPattern extends CharacterPattern {
-  constructor(character) {
-    super(character);
-  }
+// class HatPattern extends CharacterPattern {
+//   constructor(character) {
+//     super(character);
+//   }
 
-  getPrice() {
-    return super.getPrice() + 3;
-  }
-}
+//   getPrice() {
+//     return super.getPrice() + 3;
+//   }
+// }
 
-class PantsPattern extends CharacterPattern {
-  constructor(character) {
-    super(character);
-  }
+// class PantsPattern extends CharacterPattern {
+//   constructor(character) {
+//     super(character);
+//   }
 
-  getPrice() {
-    return super.getPrice() + 3;
-  }
-}
-class SoudPattern extends CharacterPattern {
-  constructor(character) {
-    super(character);
-  }
+//   getPrice() {
+//     return super.getPrice() + 3;
+//   }
+// }
+// class SoudPattern extends CharacterPattern {
+//   constructor(character) {
+//     super(character);
+//   }
 
-  getPrice() {
-    return super.getPrice() + 3;
-  }
-}
+//   getPrice() {
+//     return super.getPrice() + 3;
+//   }
+// }
 
-export { Player, HatPattern, PantsPattern };
+// export { Player, HatPattern, PantsPattern };
 
 
 //  <== game ===>
-let game = document.querySelector(".fields"),
-  res = document.querySelector(".res"),
-  money = document.querySelector(".money"),
-  btnGame = document.querySelector(".new__game"),
-  fields = document.querySelectorAll(".field"),
-  step = false,
-  count = 0;
-  zero = new Player(),
-  cross = new Player();
+const submitBtn = document.querySelector('.submit_btn');
+const game = document.querySelector(".fields_container");
+const res = document.querySelector(".res");
+// const money = document.querySelector(".money");
+const btnGame = document.querySelector(".new__game");
+const fields = document.querySelectorAll(".field");
+const field1 = document.querySelector("#field1");
+let step = false;
+let count = 0;
+const zero = "O";
+const cross = "X";
 
-function stepCross(target) {
-  target.innerHtml = cross;
-  target.classList.add("x");
+function stepCross() {
+  field1.innerHtml = cross;
+  field1.classList.add("x");
   count++;
 }
+
+field1.addEventListener("click", stepCross);
+console.log(field1);
 
 function stepZero(target) {
   target.innerHtml = zero;
@@ -77,16 +82,18 @@ function stepZero(target) {
   count++;
 }
 
+
+
 function init(e) {
   if (!step) stepCross(e.target);
-  else stepCircle(e.target);
+  else stepZero(e.target);
   step = !step;
   win();
 }
 function newGame(params) {}
 
 function win(params) {
-  let comb = [
+  const comb = [
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
@@ -128,8 +135,11 @@ function win(params) {
     }
   }
 }
-btnGame.addEventListener("click", newGame);
-game.addEventListener("click", init);
+
+
+
+// btnGame.addEventListener("click", newGame);
+// game.addEventListener("click", init);
 
 // const N_SIZE = 3,
 //   EMPTY = '&nbsp;',
