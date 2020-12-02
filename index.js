@@ -1,69 +1,69 @@
-class Player {
-  constructor(name, char, price = 0) {
-    this.name = name;
-    this.char = char;
-    this.createdDate = new Date();
-    this.id = "" + Date.now();
-    this.price = price;
-  }
-  getPrice() {
-    return this.price;
-  }
-}
+// class Player {
+//   constructor(name, char, price = 0) {
+//     this.name = name;
+//     this.char = char;
+//     this.createdDate = new Date();
+//     this.id = "" + Date.now();
+//     this.price = price;
+//   }
+//   getPrice() {
+//     return this.price;
+//   }
+// }
 
-class CharacterPattern extends Player {
-  constructor(character) {
-    super();
-    this.character = character;
-  }
+// class CharacterPattern extends Player {
+//   constructor(character) {
+//     super();
+//     this.character = character;
+//   }
 
-  getPrice() {
-    return this.character.getPrice();
-  }
-}
+//   getPrice() {
+//     return this.character.getPrice();
+//   }
+// }
 
-class HatPattern extends CharacterPattern {
-  constructor(character) {
-    super(character);
-  }
+// class HatPattern extends CharacterPattern {
+//   constructor(character) {
+//     super(character);
+//   }
 
-  getPrice() {
-    return super.getPrice() + 3;
-  }
-}
+//   getPrice() {
+//     return super.getPrice() + 3;
+//   }
+// }
 
-class PantsPattern extends CharacterPattern {
-  constructor(character) {
-    super(character);
-  }
+// class PantsPattern extends CharacterPattern {
+//   constructor(character) {
+//     super(character);
+//   }
 
-  getPrice() {
-    return super.getPrice() + 3;
-  }
-}
-class SoudPattern extends CharacterPattern {
-  constructor(character) {
-    super(character);
-  }
+//   getPrice() {
+//     return super.getPrice() + 3;
+//   }
+// }
+// class SoudPattern extends CharacterPattern {
+//   constructor(character) {
+//     super(character);
+//   }
 
-  getPrice() {
-    return super.getPrice() + 3;
-  }
-}
+//   getPrice() {
+//     return super.getPrice() + 3;
+//   }
+// }
 
-export { Player, HatPattern, PantsPattern };
+// export { Player, HatPattern, PantsPattern };
 
 
 //  <== game ===>
-let game = document.querySelector(".fields"),
+let game = document.querySelector(".fields__container"),
   res = document.querySelector(".res"),
-  money = document.querySelector(".money"),
-  btnGame = document.querySelector(".new__game"),
+//   money = document.querySelector(".money"),
+//   btnGame = document.querySelector(".new__game"),
   fields = document.querySelectorAll(".field"),
   step = false,
   count = 0;
-  zero = new Player(),
-  cross = new Player();
+  zero = 'o',
+  cross = 'x';
 
 function stepCross(target) {
   target.innerHtml = cross;
@@ -79,11 +79,13 @@ function stepZero(target) {
 
 function init(e) {
   if (!step) stepCross(e.target);
-  else stepCircle(e.target);
+  else stepZero(e.target);
   step = !step;
   win();
 }
-function newGame(params) {}
+function newGame(params) {
+
+}
 
 function win(params) {
   let comb = [
@@ -106,7 +108,7 @@ function win(params) {
         fields[comb[i][0]].classList.add("active");
         fields[comb[i][1]].classList.add("active");
         fields[comb[i][2]].classList.add("active");
-        res.innerText = "The winner is" + name;
+        res.innerText = "The winner is X" ;
       }, 1500);
       game.removeEventListener("click", init);
     } else if (
@@ -118,7 +120,7 @@ function win(params) {
         fields[comb[i][0]].classList.add("active");
         fields[comb[i][1]].classList.add("active");
         fields[comb[i][2]].classList.add("active");
-        res.innerText = "The winner is" + name;
+        res.innerText = "The winner is O" ;
       }, 1500);
       game.removeEventListener("click", init);
     }
@@ -128,7 +130,7 @@ function win(params) {
     }
   }
 }
-btnGame.addEventListener("click", newGame);
+// btnGame.addEventListener("click", newGame);
 game.addEventListener("click", init);
 
 // const N_SIZE = 3,
