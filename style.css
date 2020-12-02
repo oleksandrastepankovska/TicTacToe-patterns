@@ -111,19 +111,11 @@ img:active{
   box-shadow: 8px 4px 15px rgba(0, 0, 0, .25), -8px -4px 15px rgba(255, 255, 255, 1), 8px 4px 15px rgba(0, 0, 0, .1) inset, -8px -4px 15px rgba(255, 255, 255, .3) inset;
 }
 
-table {
-  border-collapse: collapse;
-  margin: auto;
+.active{
+  background-color: #fff;
 }
-
-td {
-  background-color: #666;
-  border: 5px solid white;
-  font-size: 80px;
-  color: #fff;
-  border-radius: 10%;
-}
-
-#player {
-  padding: 1rem;
+.res{
+  width: 150px;
+  height: 20px;
+  background-color: #fff;
 }

@@ -55,21 +55,19 @@
 
 
 //  <== game ===>
-const submitBtn = document.querySelector('.submit_btn');
-const game = document.querySelector(".fields_container");
-const res = document.querySelector(".res");
-// const money = document.querySelector(".money");
-const btnGame = document.querySelector(".new__game");
-const fields = document.querySelectorAll(".field");
-const field1 = document.querySelector("#field1");
-let step = false;
-let count = 0;
-const zero = "O";
-const cross = "X";
+let game = document.querySelector(".fields__container"),
+  res = document.querySelector(".res"),
+//   money = document.querySelector(".money"),
+//   btnGame = document.querySelector(".new__game"),
+  fields = document.querySelectorAll(".field"),
+  step = false,
+  count = 0;
+  zero = 'o',
+  cross = 'x';
 
-function stepCross() {
-  field1.innerHtml = cross;
-  field1.classList.add("x");
+function stepCross(target) {
+  target.innerHtml = cross;
+  target.classList.add("x");
   count++;
 }
 
@@ -90,7 +88,9 @@ function init(e) {
   step = !step;
   win();
 }
-function newGame(params) {}
+function newGame(params) {
+
+}
 
 function win(params) {
   const comb = [
@@ -113,7 +113,7 @@ function win(params) {
         fields[comb[i][0]].classList.add("active");
         fields[comb[i][1]].classList.add("active");
         fields[comb[i][2]].classList.add("active");
-        res.innerText = "The winner is" + name;
+        res.innerText = "The winner is X" ;
       }, 1500);
       game.removeEventListener("click", init);
     } else if (
@@ -125,7 +125,7 @@ function win(params) {
         fields[comb[i][0]].classList.add("active");
         fields[comb[i][1]].classList.add("active");
         fields[comb[i][2]].classList.add("active");
-        res.innerText = "The winner is" + name;
+        res.innerText = "The winner is O" ;
       }, 1500);
       game.removeEventListener("click", init);
     }
@@ -135,11 +135,8 @@ function win(params) {
     }
   }
 }
-
-
-
 // btnGame.addEventListener("click", newGame);
-// game.addEventListener("click", init);
+game.addEventListener("click", init);
 
 // const N_SIZE = 3,
 //   EMPTY = '&nbsp;',
