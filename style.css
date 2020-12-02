@@ -22,8 +22,8 @@ body {
 }
 
 .options{
-  width: 380px;
-  height: 380px;
+  width: 420px;
+  height: 500px;
   margin-right: 50px;
   position: relative;
   border-radius: 10px;
@@ -71,6 +71,7 @@ img:active{
   border-radius: 4px;
   width: 70px;
   height: 30px;
+  outline: none;
 }
 
 .audio_button:hover{
@@ -92,8 +93,8 @@ img:active{
 }
 
 .field {
-  width: 100px;
-  height: 100px;
+  width: 140px;
+  height: 140px;
   position: relative;
   border-radius: 10px;
   overflow: hidden;
