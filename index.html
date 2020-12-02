@@ -8,7 +8,45 @@
 </head>
 
 <body>
-  <div class="tictactoe__app">
+  <div class="wrap">
+    <div class="options">
+      <div class="name_choose">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="firstname">
+      </div>
+      
+      <div class="character">
+        <p>Choose your character</p>
+        <img src="images/char1.png" class="char1">
+        <img src="images/char2.png" class="char2">
+        <img src="images/char3.png" class="char3">
+        <img src="images/char4.png" class="char4">
+        <img src="images/char5.png" class="char5">
+      </div>
+      <div class="hat">
+        <p>Choose a hat</p>
+        <img src="images/hat1.png" class="hat1">
+        <img src="images/hat2.png" class="hat2">
+        <img src="images/hat3.png" class="hat3">
+        <img src="images/hat4.png" class="hat4">
+        <img src="images/hat5.png" class="hat5">
+      </div>
+
+      <div class="audio">
+        <p class="p_sound" >Choose a sound</p>
+        <button class="audio_button" id="audio1">cork</button>
+        <audio id="audio1" src="sounds/NFF-bouncing-cork.wav"></audio>
+        <button class="audio_button" id="audio2">line</button>
+        <audio id="audio2" src="sounds/NFF-fishing-line.wav"></audio>
+        <button class="audio_button" id="audio3">jump</button>
+        <audio id="audio3" src="sounds/NFF-jump.wav"></audio>
+        <button class="audio_button" id="audio4">attack</button>
+        <audio id="audio4" src="sounds/NFF-kid-attack.wav"></audio>
+        <button class="audio_button" id="audio5">move</button>
+        <audio id="audio5" src="sounds/NFF-kid-move.wav"></audio>
+      </div>
+    </div>
+
     <div class="fields__container">
       <div class="field"></div>
       <div class="field"></div>
