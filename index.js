@@ -1,5 +1,5 @@
 
-var N_SIZE = 3,
+const N_SIZE = 3,
   EMPTY = '&nbsp;',
   boxes = [],
   turn = 'X',
@@ -26,10 +26,10 @@ function startNewGame() {
  */
 function win(clicked) {
   // Get all cell classes
-  var memberOf = clicked.className.split(/\s+/);
-  for (var i = 0; i < memberOf.length; i++) {
-    var testClass = '.' + memberOf[i];
-    var items = contains('#tictactoe ' + testClass, turn);
+  const memberOf = clicked.className.split(/\s+/);
+  for (const i = 0; i < memberOf.length; i++) {
+    const testClass = '.' + memberOf[i];
+    const items = contains('#tictactoe ' + testClass, turn);
     // winning condition: turn == N_SIZE
     if (items.length == N_SIZE) {
       return true;
@@ -42,7 +42,7 @@ function win(clicked) {
  * Helper function to check if NodeList from selector has a particular text
  */
 function contains(selector, text) {
-  var elements = document.querySelectorAll(selector);
+  const elements = document.querySelectorAll(selector);
   return [].filter.call(elements, function (element) {
     return RegExp(text).test(element.textContent);
   });
